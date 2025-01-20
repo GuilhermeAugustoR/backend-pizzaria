@@ -6,7 +6,9 @@ class CreateProductController {
     const { name, price, description, category_id } = req.body;
 
     const createProductService = new CreateProductService();
-
+    console.log("Body:", req.body);
+    console.log("File:", req.file);
+    
     if (!req.file) {
       throw new Error("Erro ao importar o arquivo");
     } else {

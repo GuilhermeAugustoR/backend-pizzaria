@@ -20,7 +20,7 @@ import { FinishOrderController } from "./controllers/order/FinishOrderController
 
 const router = Router();
 
-const upload = multer(uploadConfig.upload("./tmp"));
+const upload = multer(uploadConfig.upload("tmp"));
 
 router.post("/users", new CreateUserController().handle);
 
@@ -35,7 +35,7 @@ router.get("/listCategory", Authenticated, new ListCategoryController().handle);
 router.post(
   "/product",
   Authenticated,
-  upload.single("file"),
+  upload.single("banner"),
   new CreateProductController().handle
 );
 
