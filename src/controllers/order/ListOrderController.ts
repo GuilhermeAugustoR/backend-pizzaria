@@ -5,7 +5,7 @@ class ListOrderController {
   async handle(req: Request, res: Response) {
     const listOrderService = new ListOrderService();
 
-    const order = listOrderService.execute();
+    const order = await listOrderService.execute();
 
     return res.json(order);
   }
