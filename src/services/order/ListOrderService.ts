@@ -10,15 +10,22 @@ class ListOrderService {
       orderBy: {
         created_at: "desc",
       },
-      select: {
-        id: true,
-        table: true,
-        name: true,
-        draft: true,
-        status: true,
-        items: true,
-        created_at: true,
+      include: {
+        items: {
+          include: {
+            product: true, // Inclui os dados do produto relacionado
+          },
+        },
       },
+      // select: {
+      //   id: true,
+      //   table: true,
+      //   name: true,
+      //   draft: true,
+      //   status: true,
+      //   items: true,
+      //   created_at: true,
+      // },
     });
 
     return order;
