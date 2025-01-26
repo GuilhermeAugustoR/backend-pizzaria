@@ -7,7 +7,7 @@ class RemoveItemController {
 
     const removeItemService = new RemoveItemSerive();
 
-    const order = removeItemService.execute({
+    const order = await removeItemService.execute({
       item_id,
     });
 
